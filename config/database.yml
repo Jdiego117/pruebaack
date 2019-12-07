@@ -1,0 +1,10 @@
+default: &default
+  adapter: postgresql
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+
+development:
+  <<: *default
+  database: prueba-backend # El nombre que le quiera dar a la BD del proyecto
+  username: postgres  # El usuario con el que se haya configurado postgres
+  password: 12345678   # Si le dio un password a la configuración del usuario en postgres colocarlo
